@@ -1,0 +1,182 @@
+/* Γενικό στυλ για όλη τη σελίδα */
+body {
+    font-family: Arial, sans-serif; /* Ορίζει μια ευανάγνωστη γραμματοσειρά */
+    line-height: 1.6;             /* Βελτιώνει την αναγνωσιμότητα του κειμένου */
+    margin: 20px;                 /* Προσθέτει λίγο περιθώριο γύρω από τη σελίδα */
+    background-color: #f4f4f4;    /* Ένα απαλό γκρι χρώμα φόντου */
+    color: #333;                  /* Σκούρο γκρι χρώμα για το κύριο κείμενο */
+}
+
+/* Στυλ για την κύρια επικεφαλίδα */
+h1 {
+    color: #0056b3; /* Ένα ωραίο μπλε χρώμα */
+    text-align: center; /* Κεντράρει την επικεφαλίδα */
+    margin-bottom: 30px; /* Προσθέτει κενό κάτω από την επικεφαλίδα */
+}
+
+/* Στυλ για τις δευτερεύουσες επικεφαλίδες */
+h2 {
+    color: #007bff; /* Ένα λίγο πιο ανοιχτό μπλε */
+    border-bottom: 2px solid #ddd; /* Μια γραμμή κάτω από κάθε h2 για διαχωρισμό */
+    padding-bottom: 5px; /* Λίγο κενό μεταξύ κειμένου και γραμμής */
+    margin-top: 40px; /* Περισσότερο κενό πάνω από τις h2 για καλύτερη οργάνωση */
+}
+
+/* Στυλ για τις λίστες */
+ul {
+    list-style-type: disc; /* Αλλάζει τις κουκκίδες σε δίσκους */
+    padding-left: 20px;    /* Λίγο εσοχή για τις λίστες */
+}
+
+/* Στυλ για τους συνδέσμους */
+a {
+    color: #0069d9;         /* Χρώμα συνδέσμου */
+    text-decoration: none;  /* Αφαιρεί την υπογράμμιση */
+}
+
+a:hover {
+    color: #004085;            /* Αλλάζει χρώμα όταν ο δείκτης είναι πάνω */
+    text-decoration: underline; /* Προσθέτει υπογράμμιση στο hover */
+}
+
+/* Στυλ για την εικόνα */
+img {
+    display: block;         /* Την κάνει μπλοκ στοιχείο για να μπορεί να κεντραριστεί */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;        /* Για να μην ξεπερνά το πλάτος της οθόνης */
+    height: auto;           /* Διατηρεί την αναλογία της εικόνας */
+    border-radius: 8px;     /* Στρογγυλεύει τις γωνίες */
+    margin-bottom: 20px;    /* Κενό κάτω από την εικόνα */
+}
+
+/* Στυλ για τη φόρμα επικοινωνίας */
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="submit"] {
+    width: calc(100% - 22px); /* Προσαρμογή για padding/border */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    width: auto; /* Αυτόματο πλάτος για το κουμπί */
+}
+
+form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Στυλ για το Μενού Πλοήγησης */
+.main-nav {
+    background-color: #333; /* Σκούρο φόντο για το μενού */
+    padding: 10px 0;
+    text-align: center; /* Κεντράρισμα των στοιχείων του μενού */
+    position: sticky; /* Κάνει το μενού να "κολλάει" στην κορυφή καθώς κάνεις scroll */
+    top: 0;           /* Απαραίτητο για το sticky positioning */
+    z-index: 1000;    /* Εξασφαλίζει ότι το μενού είναι πάνω από άλλα στοιχεία */
+    width: 100%;      /* Κάνει το μενού να πιάνει όλο το πλάτος */
+    left:0; /* Για να μην υπάρχει κενό αριστερά λόγω του margin του body */
+    box-sizing: border-box; /* Για να μην επηρεάζει το padding το συνολικό πλάτος */
+}
+
+/* Επειδή το body έχει margin: 20px, και το nav είναι 100% πλάτος, 
+   μπορεί να χρειαστεί να προσαρμόσουμε το margin του body ή το πλάτος του nav.
+   Μια λύση είναι να αφαιρέσουμε το margin από το body και να το βάλουμε σε ένα container.
+   Για τώρα, το left:0 στο nav βοηθάει. */
+
+.main-nav ul {
+    list-style-type: none; /* Αφαιρεί τις κουκκίδες της λίστας */
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav ul li {
+    display: inline-block; /* Κάνει τα στοιχεία της λίστας οριζόντια */
+    margin: 0 15px; /* Κενό μεταξύ των στοιχείων του μενού */
+}
+
+.main-nav ul li a {
+    color: #fff; /* Άσπρο χρώμα για το κείμενο των συνδέσμων */
+    text-decoration: none; /* Αφαιρεί την υπογράμμιση */
+    padding: 8px 12px;
+    display: block;
+    border-radius: 4px; /* Στρογγυλεμένες γωνίες */
+}
+
+.main-nav ul li a:hover {
+    background-color: #555; /* Αλλάζει το φόντο στο hover */
+}
+
+/* Προσαρμογή για το body και page-wrapper για καλύτερη διαχείριση του sticky nav */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    /* margin: 20px;  Αφαιρέθηκε από εδώ */
+    background-color: #f4f4f4;
+    color: #333;
+    margin-top: 0; /* Για να μην υπάρχει διπλό margin με το sticky nav */
+}
+
+.page-wrapper {
+    margin: 20px;
+    margin-top: 80px; /* Δώσε χώρο για το sticky nav (ύψος nav + λίγο παραπάνω) */
+                      /* Το ύψος του nav είναι περίπου 40-50px, βάλε λίγο παραπάνω */
+}
+
+
+/* Στυλ για τις Στήλες */
+.columns-container {
+    display: flex; /* Ενεργοποιεί το Flexbox */
+    gap: 20px;     /* Κενό μεταξύ των στηλών */
+}
+
+.main-content {
+    flex: 3;       /* Η κύρια στήλη παίρνει 3 "μονάδες" πλάτους */
+    background-color: #fff; /* Λευκό φόντο για να ξεχωρίζει */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.sidebar {
+    flex: 1;       /* Η πλαϊνή στήλη παίρνει 1 "μονάδα" πλάτους */
+    background-color: #f9f9f9; /* Ελαφρώς διαφορετικό φόντο */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.sidebar h3, .sidebar h4 { /* Επικεφαλίδες στην πλαϊνή μπάρα */
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.sidebar-section { /* Για κάθε ενότητα στην πλαϊνή μπάρα */
+    margin-bottom: 20px;
+}
+
+/* Κάνε τις h2 στην πλαϊνή μπάρα λίγο μικρότερες αν θέλεις */
+.sidebar h2 {
+    font-size: 1.3em; /* Λίγο μικρότερο από τις h2 του κυρίως περιεχομένου */
+    color: #007bff;
+}
+
