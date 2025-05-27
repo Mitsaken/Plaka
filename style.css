@@ -180,74 +180,88 @@ body {
     color: #007bff;
 }
 
-/* Make sure in style.css or in a <style> block */
+/* === Responsive Design - Media Queries === */
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-
-.page-wrapper {
-  max-width: 1200px;
-  margin: auto;
-  padding: 16px;
-}
-
-.columns-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-}
-
-/* Responsive layout: stack main and aside on small screens */
-.main-content {
-  flex: 2 1 60%;
-}
-
-.sidebar {
-  flex: 1 1 35%;
-}
-
-img, iframe {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
+/* For tablets and smaller devices (e.g., screen width up to 768px) */
 @media (max-width: 768px) {
-  .columns-container {
-    flex-direction: column;
-    gap: 0;
-  }
-  .main-content, .sidebar {
-    flex: 1 1 100%;
-  }
-  nav.main-nav ul {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  nav.main-nav li {
-    margin-bottom: 10px;
-  }
+    .columns-container {
+        flex-direction: column; /* Stack columns vertically */
+    }
+
+    .main-content, .sidebar {
+        flex: 1 1 100%; /* Allow them to take full width when stacked */
+        margin-bottom: 20px; /* Add some space between stacked main content and sidebar */
+    }
+
+    .sidebar {
+        margin-bottom: 0; /* No need for bottom margin on the last stacked item */
+    }
+
+    .page-wrapper {
+        /* Adjust top margin if nav changes height, though we'll make nav static on smaller screens */
+    }
 }
 
-/* Optional: Make navigation horizontal on desktop, vertical on mobile */
-nav.main-nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+/* For smaller mobile phones (e.g., screen width up to 600px) */
+@media (max-width: 600px) {
+    .main-nav {
+        position: static; /* Remove sticky behavior for the nav on small screens */
+                          /* This prevents it from taking up too much vertical space if it wraps */
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .main-nav ul li {
+        display: block; /* Stack menu items vertically */
+        margin: 10px 0; /* Adjust margin for vertical layout */
+    }
+
+    .main-nav ul li a {
+        padding: 10px; /* Slightly larger touch target for links */
+    }
+
+    .page-wrapper {
+        margin-top: 20px; /* Reset top margin as nav is no longer sticky */
+        margin-left: 10px;  /* Reduce side margins on small screens */
+        margin-right: 10px; /* Reduce side margins on small screens */
+    }
+
+    h1 {
+        font-size: 1.8em; /* Slightly smaller H1 on mobile */
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 1.4em; /* Slightly smaller H2 on mobile */
+        margin-top: 30px;
+    }
+    
+    /* Adjust form elements for better mobile experience */
+    form input[type="text"],
+    form input[type="email"],
+    form textarea,
+    form input[type="submit"] {
+        width: 100%; /* Make form inputs take full available width */
+        box-sizing: border-box; /* Ensure padding and border are included in the width */
+    }
+
+    /* Ensure iframe (map) scales nicely */
+    iframe {
+        max-width: 100%;
+        height: 300px; /* You might want to adjust height for mobile */
+    }
 }
 
-nav.main-nav a {
-  text-decoration: none;
-  color: #333;
-  padding: 8px 12px;
-  border-radius: 4px;
-}
-
-nav.main-nav a:hover {
-  background-color: #f0f0f0;
+/* Further adjustments for very small screens if needed (e.g., screen width up to 400px) */
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    h2 {
+        font-size: 1.2em;
+    }
+    .page-wrapper {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
 }
